@@ -25,7 +25,7 @@ class _CalculatorpageState extends State<Calculatorpage> {
             children: [
               ///Display
               Container(
-                  height: 300,
+                  height: mqHeight(300, context),
                   width: double.infinity,
                   padding:const EdgeInsets.all(25.0),
                   child: Column(
@@ -34,7 +34,7 @@ class _CalculatorpageState extends State<Calculatorpage> {
                     children: [
                       Container(
                         alignment: Alignment.centerRight,
-                        height: 80,
+                        height: mqHeight(80, context),
                         child: Text(
                           provider.displayNumber2,
                           style: TextStyle(
@@ -46,7 +46,7 @@ class _CalculatorpageState extends State<Calculatorpage> {
                       ),
                       Container(
                         alignment: Alignment.centerRight,
-                        height: 160,
+                        height: mqHeight(160, context),
                         width: double.maxFinite,
                         child: AutoSizeText(
                           provider.displayNumber1,

@@ -55,7 +55,6 @@ class HomeProvider extends ChangeNotifier {
   }
 
   String preprocessExpression(String expression) {
-    // Match numbers followed by `%` and replace them correctly
     return expression.replaceAllMapped(RegExp(r'(\d+(\.\d+)?)%'), (match) {
       return '(${match.group(1)}/100)';
     }).replaceAllMapped(RegExp(r'([\d.]+)\s*([\+\-])\s*([\d.]+)%'), (match) {
@@ -111,7 +110,6 @@ class HomeProvider extends ChangeNotifier {
       }
     }
 
-    print(newExpression.toString());
     displayNumber2 = displayNumber1;
     double result = evaluateExpression(newExpression.toString());
     displayNumber1 = result.toString();
@@ -119,7 +117,6 @@ class HomeProvider extends ChangeNotifier {
         displayNumber1[displayNumber1.length - 1] == "0") {
       displayNumber1 = displayNumber1.substring(0, displayNumber1.length - 2);
     }
-    print(displayNumber1);
     notifyListeners();
   }
 

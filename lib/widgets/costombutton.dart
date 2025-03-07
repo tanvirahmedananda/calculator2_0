@@ -1,3 +1,4 @@
+import 'package:calculator2_0/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
@@ -25,12 +26,12 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular((buttonWidth / 2)),
+          borderRadius: BorderRadius.circular((mqWidth(buttonWidth, context) / 2)),
           color: buttonColor,
           border:
               Border.all(color: buttonShadowColor!, width: buttonShadowWidth!)),
-      height: buttonHeight,
-      width: buttonWidth,
+      height: mqHeight(buttonHeight, context),
+      width: mqWidth(buttonWidth, context),
       alignment: Alignment.center,
       child: Text(
         buttonText,
